@@ -1,0 +1,86 @@
+#calculator with 10 functions:
+
+add <- function(num1, num2) {
+    return(num1 + num2)
+}
+
+subtract <- function(num1, num2) {
+    return(num1 - num2)
+}
+
+multiply <- function(num1, num2) {
+    return(num1 * num2)
+}
+
+divide <- function(num1, num2) {
+  if (num2 == 0) {
+    print ("You shall not divide by 0")
+  } else {
+    return(num1 / num2)
+  }
+}
+
+exponent <- function(num1, num2) {
+  return (num1 ^ num2)
+}
+
+factorial <- function(num1) {
+  if (num1< 0) {
+    print ("Factorial does not exist for negative numbers")
+  } else if (num1 == 0) {
+      print ("Factorial of 0 is 1")
+  } else {
+      for (i in 1:num1) {
+        factorial = factorial * i
+      }
+      print (paste ("Factorial of", num1 , "=", factorial))
+  }
+}
+
+
+squareroot <- function(num1) {
+  if (num1 >= 0) {
+       sqrt(num1)
+    } else {
+       print (paste("The square root of a negative is undefined over the Reals")) 
+    }
+}
+
+cosine <- function (x) {
+  cos(num1)
+}
+
+sine <- function (x) {
+  sin(num1)
+}
+
+tangent <- function (x) {
+  tan(num1)
+}
+
+
+# take input from the user
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+print ("5. Exponent")
+print ("6. Factorial")
+print ("7. Square root")
+print ("8. Sine")
+print ("9. Cosine")
+print ("10. Tangent")
+
+
+choice = as.integer(readline(prompt="Enter choice: "))
+
+num1 = as.integer(readline(prompt="Enter first number: "))
+num2 = as.integer(readline(prompt="Enter second number: "))
+
+
+result <- switch(choice, add(num1, num2), subtract(num1, num2), multiply(num1, num2), divide(num1, num2), exponential(num1), factorial(num1), squareroot(num1), sine(num1), cosine(num1), tangent(num1))
+
+
+print(paste("result = ", result))
+
