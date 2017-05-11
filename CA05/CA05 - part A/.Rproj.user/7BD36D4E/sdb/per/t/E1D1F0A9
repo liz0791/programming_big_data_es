@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "#calculator with 10 functions:\n\nadd <- function(num1, num2) {\n    return(num1 + num2)\n}\n\nsubtract <- function(num1, num2) {\n    return(num1 - num2)\n}\n\nmultiply <- function(num1, num2) {\n    return(num1 * num2)\n}\n\ndivide <- function(num1, num2) {\n  if (num2 == 0) {\n    print (\"You shall not divide by 0\")\n  } else {\n    return(num1 / num2)\n  }\n}\n\nexponent <- function(num1, num2) {\n  return (num1 ^ num2)\n}\n\nfactorial <- function(num1) {\n  if (num1< 0) {\n    print (\"Factorial does not exist for negative numbers\")\n  } else if (num1 == 0) {\n      print (\"Factorial of 0 is 1\")\n  } else {\n      for (i in 1:num1) {\n        factorial = factorial * i\n      }\n      print (paste (\"Factorial of\", num1 , \"=\", factorial))\n  }\n}\n\n\nsquareroot <- function(num1) {\n  if (num1 >= 0) {\n       sqrt(num1)\n    } else {\n       print (paste(\"The square root of a negative is undefined over the Reals\")) \n    }\n}\n\ncosine <- function (x) {\n  cos(num1)\n}\n\nsine <- function (x) {\n  sin(num1)\n}\n\ntangent <- function (x) {\n  tan(num1)\n}\n\n\n# take input from the user\nprint(\"Select operation.\")\nprint(\"1.Add\")\nprint(\"2.Subtract\")\nprint(\"3.Multiply\")\nprint(\"4.Divide\")\nprint (\"5. Exponent\")\nprint (\"6. Factorial\")\nprint (\"7. Square root\")\nprint (\"8. Sine\")\nprint (\"9. Cosine\")\nprint (\"10. Tangent\")\n\n\nchoice = as.integer(readline(prompt=\"Enter choice: \"))\n\nnum1 = as.integer(readline(prompt=\"Enter first number: \"))\nnum2 = as.integer(readline(prompt=\"Enter second number: \"))\n\n\nresult <- switch(choice, add(num1, num2), subtract(num1, num2), multiply(num1, num2), divide(num1, num2), exponential(num1), factorial(num1), squareroot(num1), sine(num1), cosine(num1), tangent(num1))\n\n\nprint(paste(\"result = \", result))\n\n",
+    "created" : 1494190383278.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1164202723",
+    "id" : "E1D1F0A9",
+    "lastKnownWriteTime" : 1494196687,
+    "last_content_update" : 1494196687649,
+    "path" : "~/Desktop/CA05/CA05/Calculator.Rmd",
+    "project_path" : "Calculator.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
