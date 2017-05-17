@@ -2,7 +2,7 @@
 
 import unittest
 
-from simple1 import get_commits, read_file
+from simple1 import get_commits, read_file, get_info
 
 class TestCommits(unittest.TestCase):
 
@@ -31,12 +31,12 @@ class TestCommits(unittest.TestCase):
         
     def test_get_info(self):
         commits = get_commits(self.data)
+        csv_file = get_info(commits)
         self.assertEqual('r1551925', commits[0]['revision'])
-		#self.assertEqual('Thomas', commits[0]['author'])
-		#self.assertEqual('2015-11-27', dates[0])
-		#self.assertEqual('16:57:44', times[0])
-		#self.assertEqual('1', commits[0]['number_of_lines'])
-        
+        self.assertEqual('Thomas', commits[0]['author'])
+        self.assertEqual(['r1551925', 'Thomas', '2015-11-27', '16:57:44', '1'], csv_file[0])
+        self.assertEqual(['r1551486', 'Vincent', '2015-11-27', '06:10:10', '1' ], csv_file[5])		
+		
 if __name__ == '__main__':
     unittest.main()
 
