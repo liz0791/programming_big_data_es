@@ -49,17 +49,16 @@ if __name__ == '__main__':
     data = read_file(change)
     commits = get_commits(data)
     
-
-#calling function get_info t create our csv_file in a list   
-csv_file = get_info(commits)
-print (csv_file)
-  
-    
-#exporting our data as csv 
-with open("output.csv", 'w') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_MINIMAL)
-    spamwriter.writerow(['REVISION', 'AUTHOR', 'DATE', 'TIME', 'NUMBER OF LINES'])
-    for row in csv_file:
-        spamwriter.writerow(row)
-                 
+    #calling function get_info t create our csv_file in a list   
+    csv_file = get_info(commits)
+    print (csv_file)
+      
+        
+    #exporting our data as csv 
+    with open("output.csv", 'w') as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_MINIMAL)
+        spamwriter.writerow(['REVISION', 'AUTHOR', 'DATE', 'TIME', 'NUMBER OF LINES'])
+        for row in csv_file:
+            spamwriter.writerow(row)
+                     
     
